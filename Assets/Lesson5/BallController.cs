@@ -26,12 +26,15 @@ public class BallController : MonoBehaviour {
 		}
 
 		void OnCollisionEnter(Collision other){
-			if (other.gameObject.tag == "LargeStreTag") {
+			if (other.gameObject.tag == "LargeStarTag") {
 				score += 10;
 			}
 			if (other.gameObject.tag == "LargeCloudTag") {
 				score += 20;
 			}
+			if (other.gameObject.tag == "SmallCloudTag") {
+			score += 20;
+		}
 		this.scoreText.GetComponent<Text> ().text = "Score ; " + score;
 		}
 }
